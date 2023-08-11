@@ -23,7 +23,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
 
-        buildConfigField("String", "BASE_URL", "\"https://api.coindesk.com/v1/bpi/currentprice.json\"");
+        buildConfigField("String", "BASE_URL", "\"https://api.coindesk.com/\"");
     }
 
     buildTypes {
@@ -52,6 +52,9 @@ android {
 
 dependencies {
 
+    implementation(project(":fibonacci"))
+//    api("fibonacci")
+
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
@@ -64,7 +67,7 @@ dependencies {
     // Multidex
     implementation("androidx.multidex:multidex:2.0.1")
 
-    //koin
+    // koin
     implementation("io.insert-koin:koin-core:3.4.0")
     implementation("io.insert-koin:koin-android:3.4.0")
 
@@ -76,5 +79,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
+    // Lifecycle
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
 }

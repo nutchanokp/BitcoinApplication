@@ -42,11 +42,13 @@ abstract class BaseActivity<Binding : ViewDataBinding> :
 
         initView()
         initInstances()
+
+        setupObserve()
     }
 
     abstract fun initView()
     abstract fun initInstances()
-
+    abstract fun setupObserve()
 
 
     // Declare the launcher at the top of your Activity/Fragment:

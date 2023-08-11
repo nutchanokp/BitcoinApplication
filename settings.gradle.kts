@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "BitcoinApplication"
 include(":app")
- 
+include(":fibonacci")
+include(":validate")
+include(":prime_number")
+include(":filter_array")

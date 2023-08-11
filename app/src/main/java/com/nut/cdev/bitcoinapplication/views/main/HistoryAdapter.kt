@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nut.cdev.bitcoinapplication.R
-import com.nut.cdev.bitcoinapplication.data.realm.HistoryModel
+import com.nut.cdev.bitcoinapplication.data.model.BtcModel
+import com.nut.cdev.bitcoinapplication.data.realm.BtcHistoryModel
 import com.nut.cdev.bitcoinapplication.databinding.ItemRvHistoryBinding
 
 @SuppressLint("NotifyDataSetChanged")
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryHolder>() {
-    val items = mutableListOf<HistoryModel>()
+    val items = mutableListOf<BtcHistoryModel>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryHolder {
         val binding = DataBindingUtil.inflate<ItemRvHistoryBinding>(
             LayoutInflater.from(parent.context),
@@ -28,11 +29,11 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryHolder>() {
         holder.bind(items[position])
     }
 
-    fun getPosition(position: Int): HistoryModel {
+    fun getPosition(position: Int): BtcHistoryModel {
         return items[position]
     }
 
-    fun deleteItem(item: HistoryModel) {
+    fun deleteItem(item: BtcHistoryModel) {
         try {
 //           items.indexOf(item)
 //           items.find { it.id == item.id }
@@ -44,17 +45,27 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryHolder>() {
         }
     }
 
-    fun setItems(items: MutableList<HistoryModel>) {
+    fun setItems(items: MutableList<BtcHistoryModel>) {
         this.items.clear()
         this.items.addAll(items)
+        this.notifyDataSetChanged()
+    }
+
+    fun addItem(items: BtcHistoryModel) {
+        this.items.add(0,items)
         this.notifyDataSetChanged()
     }
 
     class HistoryHolder(val binding: ItemRvHistoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: HistoryModel) {
-//            binding.apply {
+        fun bind(item: BtcHistoryModel) {
+            binding.apply {
+                tvChartName.text = item.chartName
+                tvUpdated.text = item.updated
+                tvUpdatedISO.text = item.updatedISO
+                tvUpdateduk.text = item.updateduk
+            }
 //                tvSummary.text = item?.healthType
 //                tvBmi.text = item?.bmi.toString()
 //                tvBmr.text = item?.bmr.toString()

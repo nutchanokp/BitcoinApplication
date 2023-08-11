@@ -11,6 +11,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/fibonacci" />
+            <option value="$PROJECT_DIR$/filter_array" />
+            <option value="$PROJECT_DIR$/prime_number" />
+            <option value="$PROJECT_DIR$/validate" />
           </set>
         </option>
       </GradleProjectSettings>

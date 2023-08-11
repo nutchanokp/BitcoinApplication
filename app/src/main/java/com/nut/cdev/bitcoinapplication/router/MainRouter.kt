@@ -3,6 +3,7 @@ package com.nut.cdev.bitcoinapplication.router
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.nut.cdev.bitcoinapplication.views.main.MainActivity
+import com.nut.cdev.fibonacci.FibonacciActivity
 
 class MainRouter constructor(
     val activity: AppCompatActivity
@@ -22,6 +23,12 @@ class MainRouter constructor(
     fun toBMI() {
         activity.apply {
 //            startActivity(Intent(activity, BMIActivity::class.java))
+        }
+    }
+
+    fun toFibonacci() {
+        activity.apply {
+            startActivity(Intent(activity, FibonacciActivity::class.java))
         }
     }
 

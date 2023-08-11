@@ -2,6 +2,7 @@ package com.nut.cdev.bitcoinapplication
 
 import android.app.Application
 import androidx.multidex.MultiDexApplication
+import com.nut.cdev.bitcoinapplication.di.apiModule
 import com.nut.cdev.bitcoinapplication.di.appModule
 import com.nut.cdev.bitcoinapplication.di.repoModule
 import com.nut.cdev.bitcoinapplication.di.viewModelModule
@@ -18,7 +19,7 @@ class MainApplication : MultiDexApplication() {
         super.onCreate()
         startKoin {
             androidContext(this@MainApplication)
-            modules(listOf(appModule, repoModule, viewModelModule))
+            modules(listOf(appModule, repoModule, viewModelModule, apiModule))
         }
 
         setupRealm()
@@ -29,7 +30,7 @@ class MainApplication : MultiDexApplication() {
         Realm.init(this)
 
         val configuration = RealmConfiguration.Builder()
-            .name("healthy.realm")
+            .name("bitcoin.realm")
             .deleteRealmIfMigrationNeeded()
             .schemaVersion(0)
             .allowWritesOnUiThread(true)
