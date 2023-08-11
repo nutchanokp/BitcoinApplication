@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.nut.cdev.fibonacci.ext.generateFibonacci
 import com.nut.cdev.fibonacci.ui.theme.BitcoinApplicationTheme
 
 class FibonacciActivity : ComponentActivity() {
@@ -31,8 +32,9 @@ class FibonacciActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    val fibonacciNumber = generateFibonacci(50)
     Text(
-        text = "Hello $name!",
+        text = "fibonacciNumber : $fibonacciNumber!",
         modifier = modifier
     )
 }
