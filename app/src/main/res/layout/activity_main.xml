@@ -9,21 +9,43 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".views.main.MainActivity">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/baseline_menu_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="ราคา BitCoin" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <TextView
             android:id="@+id/tvCountdown"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/btnFibonacci"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            tools:text="Refrash In : 60s" />
+
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#F39696"
@@ -45,6 +67,7 @@
                     android:text="tvTime"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvUpdated"
                     android:layout_width="wrap_content"
@@ -54,6 +77,7 @@
                     android:text="tvUpdated"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvUpdatedISO"
                     android:layout_width="wrap_content"
@@ -63,6 +87,7 @@
                     android:text="updatedISO"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvUpdateduk"
                     android:layout_width="wrap_content"
@@ -95,6 +120,7 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHistory"
             android:layout_width="match_parent"

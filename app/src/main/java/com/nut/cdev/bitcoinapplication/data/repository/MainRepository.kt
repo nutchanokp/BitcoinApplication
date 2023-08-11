@@ -25,6 +25,21 @@ class MainRepository(private val apiHelper: ApiService) {
         return list
     }
 
+    fun deleteHistory(updatedISO: String): MutableLiveData<List<BtcHistoryModel>> {
+        val list = MutableLiveData<List<BtcHistoryModel>>()
+        realm.executeTransaction {
+            val notes = realm.where(BtcHistoryModel::class.java)
+                .equalTo("updatedISO", updatedISO)
+                .findFirst()
+
+            notes?.deleteFromRealm()
+        }
+        val notes =
+            realm.where(BtcHistoryModel::class.java).findAll().sort("updatedISO", Sort.DESCENDING)
+        list.value = notes?.subList(0, notes.size)
+        return list
+    }
+
 
     private fun addBtcHistory(btcModel: BtcModel) {
         var target = realm.where(BtcHistoryModel::class.java).findAll()

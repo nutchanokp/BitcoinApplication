@@ -69,6 +69,14 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
         }.start()
     }
 
+    fun deleteHistory(updatedISO: String) {
+        repository.deleteHistory(updatedISO).value?.let {
+            val first = it.first()
+            btcHistory.emit(it.filterNot { it.updated == first.updated })
+
+        }
+    }
+
     init {
         getBtc()
 

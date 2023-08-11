@@ -9,6 +9,8 @@ import com.nut.cdev.bitcoinapplication.R
 import com.nut.cdev.bitcoinapplication.data.model.BtcModel
 import com.nut.cdev.bitcoinapplication.data.realm.BtcHistoryModel
 import com.nut.cdev.bitcoinapplication.databinding.ItemRvHistoryBinding
+import com.nut.cdev.recyclerview.swipe.OnSwipeListener
+
 
 @SuppressLint("NotifyDataSetChanged")
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryHolder>() {
@@ -57,7 +59,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryHolder>() {
     }
 
     class HistoryHolder(val binding: ItemRvHistoryBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        RecyclerView.ViewHolder(binding.root), OnSwipeListener {
 
         fun bind(item: BtcHistoryModel) {
             binding.apply {
@@ -80,6 +82,9 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryHolder>() {
 //            binding.btnHistory.setOnClickListener {
 //
 //            }
+        }
+        override fun isSwipe(): Boolean {
+            return true
         }
     }
 }

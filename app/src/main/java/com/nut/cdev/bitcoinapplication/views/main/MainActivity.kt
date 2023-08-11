@@ -3,6 +3,10 @@ package com.nut.cdev.bitcoinapplication.views.main
 import com.nut.cdev.bitcoinapplication.R
 import com.nut.cdev.bitcoinapplication.base.BaseActivity
 import com.nut.cdev.bitcoinapplication.databinding.ActivityMainBinding
+import com.nut.cdev.bitcoinapplication.enums.TopicEnum
+import com.nut.cdev.bitcoinapplication.ext.enableSwipeRecyclerView
+import com.nut.cdev.bitcoinapplication.views.dialog.DialogOther
+import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -13,11 +17,34 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val adapter = HistoryAdapter()
     override fun initView() {
         binding.rvHistory.adapter = adapter
+
+        binding.rvHistory.enableSwipeRecyclerView(
+            this,
+            adapter
+        ) {
+            runBlocking {
+//                adapter.deleteItem(it)
+                it.updatedISO?.let { it1 -> viewModel.deleteHistory(it1) }
+            }
+        }
     }
 
     override fun initInstances() {
-        binding.btnFibonacci.setOnClickListener {
-            router.toFibonacci()
+        binding.apply {
+
+            btnMenu.setOnClickListener {
+
+                val dialog = DialogOther()
+                dialog.show(supportFragmentManager, "")
+                dialog.setOnClick {
+                    when (it) {
+                        TopicEnum.fibonacci -> router.toFibonacci()
+                        TopicEnum.filter_array -> router.toFibonacci()
+                        TopicEnum.prime_number -> router.toFibonacci()
+                        TopicEnum.validate -> router.toFibonacci()
+                    }
+                }
+            }
         }
     }
 
@@ -36,5 +63,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         viewModel.countDownTimer.observe(this) {
             binding.tvCountdown.text = it
         }
+
+
     }
 }

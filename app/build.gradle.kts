@@ -53,7 +53,11 @@ android {
 dependencies {
 
     implementation(project(":fibonacci"))
-//    api("fibonacci")
+    implementation(project(":recyclerview"))
+    implementation(project(":validate"))
+    implementation(project(":prime_number"))
+    implementation(project(":filter_array"))
+    implementation(project(":filter_array"))
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")

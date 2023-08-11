@@ -5,4 +5,6 @@
 
     <color name="transparent">#00FFFFFF</color>
 
+    <color name="btn_red">#F10606</color>
+
 </resources>
