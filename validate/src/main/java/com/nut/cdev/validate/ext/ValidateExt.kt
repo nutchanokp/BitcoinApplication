@@ -21,19 +21,65 @@ fun validatePincode(pin: String): Boolean {
     }
 
     // เช็คเลขชุดซ้ำเกิน 2 ชุด
-    var duplicateSets = 0
-    for (i in 0 until pin.length - 3) {
-        if (pin.substring(i, i + 2) == pin.substring(i + 2, i + 4)) {
-            duplicateSets++
-            if (duplicateSets >= 2) {
-                return false
-            }
-        }
+    val pattern = "(\\d)\\1.*(\\d)\\2".toRegex()
+    if (pattern.matches(pin)) {
+        return false
     }
 
     return true
 }
 
+// เช็คความยาวของ input
+fun String.validatePinCodeLength(): Boolean {
+    return this.length >= 6
+}
+
+// เช็คเลขซ้ำติดกันเกิน 2 ตัว
+fun String.validatePinCodeContiguous(): Boolean {
+    var result = true
+    for (i in 0 until this.length - 2) {
+        if (this[i] == this[i + 1] && this[i + 1] == this[i + 2]) {
+            result = false
+            return false
+        }
+    }
+    return result
+}
+
+// เช็คเลขเรียงกันเกิน 2 ตัว
+fun String.validatePinCodeLinedUp(): Boolean {
+    var result = true
+    for (i in 0 until this.length - 2) {
+        if (this[i + 2] - this[i + 1] == 1 && this[i + 1] - this[i] == 1) {
+            result = false
+            return false
+        }
+    }
+    return result
+}
+
+// เช็คเลขชุดซ้ำเกิน 2 ชุด
+fun String.validatePinCodeDuplicate(): Boolean {
+//    var result = true
+//    var duplicateSets = 0
+//    for (i in 0 until this.length - 3) {
+//        if (this.substring(i, i + 2) == this.substring(i + 2, i + 4)) {
+//            duplicateSets++
+//            if (duplicateSets >= 2) {
+//                result = false
+//                return false
+//            }
+//        }
+//    }
+//    return result
+    // เช็คชุดเลขซ้ำเกิน 2 ชุด
+    val pattern = "(\\d)\\1.*(\\d)\\2".toRegex()
+    if (pattern.matches(this)) {
+        return false
+    }
+
+    return true
+}
 
 fun main() {
     val pin1 = "17283"
