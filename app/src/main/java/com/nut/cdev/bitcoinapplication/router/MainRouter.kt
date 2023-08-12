@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.nut.cdev.bitcoinapplication.views.main.MainActivity
 import com.nut.cdev.fibonacci.FibonacciActivity
+import com.nut.cdev.prime_number.ext.PrimeNumberActivity
+import com.nut.cdev.validate.ext.ValidateActivity
 
 class MainRouter constructor(
     val activity: AppCompatActivity
@@ -29,6 +31,16 @@ class MainRouter constructor(
     fun toFibonacci() {
         activity.apply {
             startActivity(Intent(activity, FibonacciActivity::class.java))
+        }
+    }
+    fun toPrimeNumber() {
+        activity.apply {
+            startActivity(Intent(activity, PrimeNumberActivity::class.java))
+        }
+    }
+    fun toValidatePinCode() {
+        activity.apply {
+            startActivity(Intent(activity, ValidateActivity::class.java))
         }
     }
 

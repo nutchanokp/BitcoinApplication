@@ -4,19 +4,15 @@ plugins {
     id("kotlin-kapt")
     id("realm-android")
 }
-//ext {
-//    kotlin_version = "1.7.20"
-//    nav_version = "2.5.3"
-//    viewmodel_version = '2.2.0'
-//}
+
 android {
-    namespace = "com.nut.cdev.bitcoinapplication"
-    compileSdk = 33
+    namespace =  rootProject.extra["applicationId"] as String?
+    compileSdk = rootProject.extra["targetSdkVersion"] as Int?
 
     defaultConfig {
-        applicationId = "com.nut.cdev.bitcoinapplication"
-        minSdk = 24
-        targetSdk = 33
+        applicationId = rootProject.extra["applicationId"] as String?
+        minSdk = rootProject.extra["minSdkVersion"] as Int?
+        targetSdk = rootProject.extra["targetSdkVersion"] as Int?
         versionCode = 1
         versionName = "1.0"
 
@@ -57,7 +53,7 @@ dependencies {
     implementation(project(":validate"))
     implementation(project(":prime_number"))
     implementation(project(":filter_array"))
-    implementation(project(":filter_array"))
+    implementation(project(":number_picker"))
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")

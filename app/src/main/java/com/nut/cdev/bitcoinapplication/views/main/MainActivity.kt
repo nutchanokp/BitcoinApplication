@@ -40,8 +40,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     when (it) {
                         TopicEnum.fibonacci -> router.toFibonacci()
                         TopicEnum.filter_array -> router.toFibonacci()
-                        TopicEnum.prime_number -> router.toFibonacci()
-                        TopicEnum.validate -> router.toFibonacci()
+                        TopicEnum.prime_number -> router.toPrimeNumber()
+                        TopicEnum.validate -> router.toValidatePinCode()
                     }
                 }
             }

@@ -9,7 +9,7 @@ import com.nut.cdev.bitcoinapplication.databinding.DialogOtherBinding
 import com.nut.cdev.bitcoinapplication.enums.TopicEnum
 import com.nut.cdev.bitcoinapplication.router.MainRouter
 
-class DialogOther() : BaseDialogFragment<DialogOtherBinding>(true) {
+class DialogBtcDetail() : BaseDialogFragment<DialogOtherBinding>(true) {
 
     private var onClick: ((TopicEnum) -> Unit)? = null
     override fun getLayoutId(): Int = R.layout.dialog_other
@@ -20,15 +20,6 @@ class DialogOther() : BaseDialogFragment<DialogOtherBinding>(true) {
             bg.setOnClickListener { dismiss() }
             btnFibonacci.setOnClickListener {
                 onClick?.invoke(TopicEnum.fibonacci)
-            }
-            btnFilterArray.setOnClickListener {
-                onClick?.invoke(TopicEnum.filter_array)
-            }
-            btnPickerNumber.setOnClickListener {
-                onClick?.invoke(TopicEnum.prime_number)
-            }
-            btnValidate.setOnClickListener {
-                onClick?.invoke(TopicEnum.validate)
             }
         }
     }

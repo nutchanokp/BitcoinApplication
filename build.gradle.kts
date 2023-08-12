@@ -1,9 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+//allprojects {
+//    ext {
+//        set("minSdkVersion", 25)
+//        set("targetSdkVersion", 34)
+//    }
+//}
 buildscript {
     extra.apply {
-        set("minSdkVersion", 26)
-        set("targetSdkVersion", 27)
+        set("minSdkVersion", 25)
+        set("targetSdkVersion", 34)
+        set("applicationId", "com.nut.cdev.bitcoinapplication")
     }
 
     dependencies {
