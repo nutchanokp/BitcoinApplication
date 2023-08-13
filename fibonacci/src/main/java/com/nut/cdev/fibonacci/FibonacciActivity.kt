@@ -65,7 +65,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             }
 
             Text(
-                text = "Generate ตัวเลข Fibonacci",
+                text = "Generate ตัวเลข จำนวนเฉพาะ",
                 textAlign = TextAlign.Center,
                 color = Color.White,
                 style = MaterialTheme.typography.titleLarge,
