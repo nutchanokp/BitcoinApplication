@@ -15,11 +15,11 @@ USED
 - Call API using : Retrofit
 
 <div style="display:flex;">
-<img alt="App image" src="/graphics/screenshot_main.png" width="20%">
-<img alt="App image" src="/graphics/screenshot_main_dialog_other.png" width="20%">
-<img alt="App image" src="/graphics/screenshot_pincode.png" width="20%">
-<img alt="App image" src="/graphics/screenshot_prime_number.png" width="20%">
-<img alt="App image" src="/graphics/screenshot_fibonacci.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_main.png" width="19%">
+<img alt="App image" src="/graphics/screenshot_main_dialog_other.png" width="19%">
+<img alt="App image" src="/graphics/screenshot_pincode.png" width="19%">
+<img alt="App image" src="/graphics/screenshot_prime_number.png" width="19%">
+<img alt="App image" src="/graphics/screenshot_fibonacci.png" width="19%">
 </div>
 <hr>
 currency BTC with refresh every 1 minute <br>
