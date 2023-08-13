@@ -34,6 +34,7 @@ click to show dialog detail and can converter unit to BTC
 </div>
 <hr>
 เขียน program generate ตัวเลข Fibonacci 
+<br>
 <a href='/fibonacci/src/main/java/com/nut/cdev/fibonacci/ext/FibonacciExt.kt'>Code Link</a>
 <br>
 <a href='/fibonacci/src/test/java/com/nut/cdev/fibonacci/ext/FibonacciExtKtTest.kt'>Unit Test Link</a>
@@ -44,6 +45,7 @@ click to show dialog detail and can converter unit to BTC
 </div>
 <hr>
 เขียน program generate จำนวนเฉพาะ 
+<br>
 <a href='/prime_number/src/main/java/com/nut/cdev/prime_number/ext/PrimeNumberExt.kt'>Code Link</a>
 <br>
 <a href='/prime_number/src/test/java/com/nut/cdev/prime_number/ext/PrimeNumberExtKtTest.kt'>Unit Test Link</a>
@@ -59,6 +61,7 @@ click to show dialog detail and can converter unit to BTC
 <a href='/filter_array/src/test/java/com/nut/cdev/filter_array/ext/FilterArrayExtKtTest.kt'>Unit Test Link</a>
 <hr>
 เขียนฟังก์ชัน validate pincode
+<br>
 <a href='/validate/src/main/java/com/nut/cdev/validate/ext/ValidateExt.kt'>Code Link</a>
 <br>
 <a href='/validate/src/test/java/com/nut/cdev/validate/ext/ValidateExtKtTest.kt'>Unit Test Link</a>
