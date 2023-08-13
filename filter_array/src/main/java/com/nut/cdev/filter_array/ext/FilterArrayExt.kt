@@ -12,22 +12,6 @@ fun main() {
 }
 
 fun filterArray(array1: Array<Int>, array2: Array<Int>): Array<Int> {
-    val resultMap = mutableMapOf<Int, Boolean>()
-
-    // สร้างเพิ่มสมาชิกใน resultMap จาก array2
-    for (element in array2) {
-        resultMap[element] = true
-    }
-
-    val filteredList = mutableListOf<Int>()
-
-    // กรองสมาชิกใน array1 โดยใช้ resultMap เพื่อตรวจสอบว่ามีใน array2 หรือไม่
-    for (element in array1) {
-        if (resultMap.containsKey(element)) {
-            filteredList.add(element)
-        }
-    }
-
     val filteredArray = mutableListOf<Int>()
 
     for (item1 in array1) {

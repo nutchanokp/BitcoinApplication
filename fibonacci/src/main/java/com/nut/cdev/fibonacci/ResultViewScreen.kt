@@ -34,8 +34,7 @@ import java.text.DecimalFormat
 
 @Preview
 @Composable
-fun BmrResultViewPreview() {
-    val (isMale, isMaleSelected) = remember { mutableStateOf(false) }
+fun ResultViewPreview() {
 
     BitcoinApplicationTheme {
         Surface(

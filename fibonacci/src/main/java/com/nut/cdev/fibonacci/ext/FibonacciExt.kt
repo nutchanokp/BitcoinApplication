@@ -29,12 +29,6 @@ fun generateFibonacciAt(index: Int): BigInteger {
     return current
 }
 
-
-//fun main() {
-//    val a = generateFibonacciList(400000)
-//     a
-//}
-
 fun main(){
     val p = 10000
     val num =  9990

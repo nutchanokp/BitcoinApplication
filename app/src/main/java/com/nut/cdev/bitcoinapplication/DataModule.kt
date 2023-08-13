@@ -6,18 +6,10 @@ import java.util.*
 
 class DataModule {
     companion object {
-        @JvmStatic
-        val LOCALE_TH = Locale("th", "TH")
 
         @JvmStatic
         @Volatile
         private var applicationContext: Context? = null
-
-        @JvmStatic
-        private var mBaseUrl = ""
-
-        @JvmStatic
-        private var url = ""
 
         @JvmStatic
         fun getModuleContext(): Context {

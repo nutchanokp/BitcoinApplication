@@ -13,8 +13,8 @@ android {
         applicationId = rootProject.extra["applicationId"] as String?
         minSdk = rootProject.extra["minSdkVersion"] as Int?
         targetSdk = rootProject.extra["targetSdkVersion"] as Int?
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = rootProject.extra["versionCode"] as Int?
+        versionName = rootProject.extra["versionName"] as String?
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true

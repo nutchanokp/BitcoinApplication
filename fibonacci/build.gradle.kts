@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "com.nut.cdev.fibonacci"
-    compileSdk = 34
+    compileSdk = rootProject.extra["targetSdkVersion"] as Int?
 
     defaultConfig {
-        minSdk = 25
+        minSdk = rootProject.extra["minSdkVersion"] as Int?
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

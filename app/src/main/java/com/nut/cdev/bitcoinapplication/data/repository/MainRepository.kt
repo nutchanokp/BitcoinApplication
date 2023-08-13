@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class MainRepository(private val apiHelper: ApiService) {
 
-    private var realm: Realm = Realm.getDefaultInstance()
+    private val realm: Realm = Realm.getDefaultInstance()
     suspend fun getBtc(): Response<BtcModel> {
         val btcResponse = apiHelper.getBtc()
         btcResponse.body()?.let { addBtcHistory(it) }

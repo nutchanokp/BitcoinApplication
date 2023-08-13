@@ -18,8 +18,6 @@ import com.nut.cdev.bitcoinapplication.databinding.DialogAlertMessageBinding
 class DialogAlertMessage : BaseDialogFragment<DialogAlertMessageBinding>(false) {
 
     private val TAG = "dialog_alert_message"
-
-    //    private lateinit var binding: DialogAlertMessageBinding
     private var onLeftClick: ((DialogFragment) -> Unit)? = null
     private var onRightClick: ((DialogFragment) -> Unit)? = null
     private var type: Int? = null
@@ -46,43 +44,6 @@ class DialogAlertMessage : BaseDialogFragment<DialogAlertMessageBinding>(false) 
             return fragment
         }
 
-        fun newInstanceWithTitle(title: String, message: String): DialogAlertMessage {
-            val fragment = DialogAlertMessage()
-            val bundle = Bundle()
-            bundle.putString(KEY_MESSAGE, message)
-            bundle.putString(KEY_TITLE, title)
-            bundle.putString(KEY_TEXT_BUTTON_LEFT, "OK")
-            bundle.putBoolean(KEY_FOCUS_LEFT, true)
-            fragment.arguments = bundle
-            return fragment
-        }
-
-        fun newInstance(message: String, nameButton: String): DialogAlertMessage {
-            val fragment = DialogAlertMessage()
-            val bundle = Bundle()
-            bundle.putString(KEY_MESSAGE, message)
-            bundle.putString(KEY_TEXT_BUTTON_LEFT, nameButton)
-            bundle.putBoolean(KEY_FOCUS_LEFT, true)
-            bundle.putInt(KEY_MESSAGE_GRAVITY, Gravity.CENTER)
-            fragment.arguments = bundle
-            return fragment
-        }
-
-        fun newInstanceErrorMessage(
-            title: String,
-            message: String,
-            nameButton: String
-        ): DialogAlertMessage {
-            val fragment = DialogAlertMessage()
-            val bundle = Bundle()
-            bundle.putString(KEY_TITLE, title)
-            bundle.putString(KEY_MESSAGE, message)
-            bundle.putString(KEY_TEXT_BUTTON_LEFT, nameButton)
-            bundle.putBoolean(KEY_FOCUS_LEFT, true)
-            fragment.arguments = bundle
-            return fragment
-        }
-
         fun newInstance(
             message: String,
             textLeft: String?,
@@ -95,35 +56,6 @@ class DialogAlertMessage : BaseDialogFragment<DialogAlertMessageBinding>(false) 
             bundle.putString(KEY_TEXT_BUTTON_LEFT, textLeft)
             bundle.putString(KEY_TEXT_BUTTON_RIGHT, textRight)
             bundle.putInt(KEY_MESSAGE_GRAVITY, msgGravity)
-            fragment.arguments = bundle
-            return fragment
-        }
-
-        fun newInstanceWithOk(message: String, textRight: String, type: Int): DialogAlertMessage {
-            val fragment = DialogAlertMessage()
-            val bundle = Bundle()
-            bundle.putString(KEY_MESSAGE, message)
-            bundle.putInt(KEY_TYPE, type)
-            bundle.putString(KEY_TEXT_BUTTON_RIGHT, textRight)
-            fragment.arguments = bundle
-            return fragment
-        }
-
-        fun newInstance(
-            title: String,
-            message: String,
-            textLeft: String, focusLeft: Boolean,
-            textRight: String, focusRight: Boolean
-        ): DialogAlertMessage {
-            val fragment = DialogAlertMessage()
-            val bundle = Bundle()
-            bundle.putString(KEY_TITLE, title)
-            bundle.putString(KEY_MESSAGE, message)
-            bundle.putString(KEY_TEXT_BUTTON_LEFT, textLeft)
-            bundle.putString(KEY_TEXT_BUTTON_RIGHT, textRight)
-            bundle.putBoolean(KEY_FOCUS_LEFT, focusLeft)
-            bundle.putBoolean(KEY_FOCUS_RIGHT, focusRight)
-            bundle.putInt(KEY_MESSAGE_GRAVITY, Gravity.CENTER)
             fragment.arguments = bundle
             return fragment
         }

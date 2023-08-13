@@ -4,7 +4,7 @@
     <application>
         <activity
             android:windowSoftInputMode="adjustResize"
-            android:name=".ext.ValidateActivity"
+            android:name=".ValidateActivity"
             android:exported="false" />
     </application>
 
