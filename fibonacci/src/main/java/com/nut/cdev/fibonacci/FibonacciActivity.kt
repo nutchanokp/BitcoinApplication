@@ -40,14 +40,14 @@ class FibonacciActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BitcoinApplicationTheme {
-                GreetingPreview()
+                PrimeNumberPreview()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun PrimeNumber( modifier: Modifier = Modifier) {
 
     val (weight, weightSelected) = remember { mutableIntStateOf(0) }
 
@@ -86,13 +86,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun PrimeNumberPreview() {
     BitcoinApplicationTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = Purple80
         ) {
-            Greeting("Android")
+            PrimeNumber()
         }
     }
 }

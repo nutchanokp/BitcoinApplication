@@ -1,14 +1,18 @@
-package com.nut.cdev.validate.ext
+package com.nut.cdev.validate
 
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.WindowManager
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.nut.cdev.validate.R
 import com.nut.cdev.validate.databinding.ActivityValidateBinding
+import com.nut.cdev.validate.ext.loadImage
+import com.nut.cdev.validate.ext.validatePinCodeContiguous
+import com.nut.cdev.validate.ext.validatePinCodeDuplicate
+import com.nut.cdev.validate.ext.validatePinCodeLength
+import com.nut.cdev.validate.ext.validatePinCodeLinedUp
 
 class ValidateActivity : AppCompatActivity() {
 
@@ -16,31 +20,15 @@ class ValidateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_validate)
-//        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         initView()
     }
 
     private fun initView() {
         updatePinCode("")
-        binding.etPinCode.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable) {
-                updatePinCode(binding.etPinCode.text.toString())
-            }
-
-            override fun beforeTextChanged(
-                s: CharSequence, start: Int,
-                count: Int, after: Int
-            ) {
-            }
-
-            override fun onTextChanged(
-                s: CharSequence, start: Int,
-                before: Int, count: Int
-            ) {
-            }
-        })
-        binding.btnBack.setOnClickListener { finish() }
+        binding.apply {
+            etPinCode.doAddTextChangedListener()
+            btnBack.setOnClickListener { finish() }
+        }
     }
 
     private fun updatePinCode(pinCode: String) {
@@ -56,6 +44,27 @@ class ValidateActivity : AppCompatActivity() {
                 ivDuplicate.setValidate(false)
             }
         }
+    }
+
+    private fun EditText.doAddTextChangedListener() {
+        this.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {
+                updatePinCode(this@doAddTextChangedListener.text.toString())
+            }
+
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int,
+                count: Int, after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int,
+                before: Int, count: Int
+            ) {
+            }
+        })
     }
 
     private fun ImageView.setValidate(isValid: Boolean) {

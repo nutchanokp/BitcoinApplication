@@ -31,8 +31,7 @@ import com.nut.cdev.prime_number.theme.Purple80
 
 @Preview
 @Composable
-fun BmrResultViewPreview() {
-    val (isMale, isMaleSelected) = remember { mutableStateOf(false) }
+fun ResultViewPreview() {
 
     BitcoinApplicationTheme {
         Surface(

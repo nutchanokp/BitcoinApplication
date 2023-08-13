@@ -16,8 +16,6 @@ val appModule = module {
     single { createSecurePreferences(androidContext()) }
     single { providePreference(get()) }
     single { providePreferenceManager(get()) }
-    single { provideRouter(AppCompatActivity()) }
-//    single { setupRealm(androidContext()) }
 
 }
 
@@ -32,20 +30,3 @@ fun providePreferenceManager(mainPreference: MainPreference): PreferenceManager 
     return PreferenceManager(mainPreference)
 }
 
-private fun provideRouter(appCompatActivity: AppCompatActivity) = MainRouter(appCompatActivity)
-
-
-//private fun setupRealm(context: Context) {
-//
-//    Realm.init(context)
-//
-//    val configuration = RealmConfiguration.Builder()
-//        .name("bitcoin.realm")
-//        .deleteRealmIfMigrationNeeded()
-//        .schemaVersion(0)
-//        .allowWritesOnUiThread(true)
-//        .allowQueriesOnUiThread(true)
-//        .build()
-//
-//    Realm.setDefaultConfiguration(configuration)
-//}

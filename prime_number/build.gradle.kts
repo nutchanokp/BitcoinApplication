@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "com.nut.cdev.prime_number"
-    compileSdk = 33
+    compileSdk = rootProject.extra["targetSdkVersion"] as Int?
 
     defaultConfig {
-        minSdk = 25
+        minSdk = rootProject.extra["minSdkVersion"] as Int?
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -66,4 +66,5 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
 }

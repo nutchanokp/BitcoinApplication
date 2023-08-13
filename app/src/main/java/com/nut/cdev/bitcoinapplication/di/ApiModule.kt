@@ -2,6 +2,7 @@ package com.nut.cdev.bitcoinapplication.di
 
 import com.nut.cdev.bitcoinapplication.BuildConfig
 import com.nut.cdev.bitcoinapplication.data.ApiService
+import io.realm.Realm
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit

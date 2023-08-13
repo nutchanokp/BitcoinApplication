@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="#FFFFFF"
         android:orientation="vertical"
-        tools:context=".ext.ValidateActivity">
+        tools:context=".ValidateActivity">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"

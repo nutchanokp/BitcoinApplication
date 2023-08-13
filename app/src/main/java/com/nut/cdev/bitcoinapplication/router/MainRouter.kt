@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nut.cdev.bitcoinapplication.views.main.MainActivity
 import com.nut.cdev.fibonacci.FibonacciActivity
 import com.nut.cdev.prime_number.PrimeNumberActivity
-import com.nut.cdev.validate.ext.ValidateActivity
+import com.nut.cdev.validate.ValidateActivity
 
 class MainRouter constructor(
     val activity: AppCompatActivity
@@ -19,12 +19,6 @@ class MainRouter constructor(
         activity.apply {
             startActivity(intent)
 //            TransitionUtils().showActivityTransitionFromTop(activity)
-        }
-    }
-
-    fun toBMI() {
-        activity.apply {
-//            startActivity(Intent(activity, BMIActivity::class.java))
         }
     }
 

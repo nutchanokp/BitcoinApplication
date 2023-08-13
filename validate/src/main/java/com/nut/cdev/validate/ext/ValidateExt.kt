@@ -1,32 +1,17 @@
 package com.nut.cdev.validate.ext
 
 fun validatePincode(pin: String): Boolean {
+    var result = true
     // เช็คความยาวของ input
-    if (pin.length < 6) {
-        return false
-    }
-
+    result = pin.validatePinCodeLength()
     // เช็คเลขซ้ำติดกันเกิน 2 ตัว
-    for (i in 0 until pin.length - 2) {
-        if (pin[i] == pin[i + 1] && pin[i + 1] == pin[i + 2]) {
-            return false
-        }
-    }
-
+    result = if (result) pin.validatePinCodeContiguous() else result
     // เช็คเลขเรียงกันเกิน 2 ตัว
-    for (i in 0 until pin.length - 2) {
-        if (pin[i + 2] - pin[i + 1] == 1 && pin[i + 1] - pin[i] == 1) {
-            return false
-        }
-    }
-
+    result = if (result) pin.validatePinCodeLinedUp() else result
     // เช็คเลขชุดซ้ำเกิน 2 ชุด
-    val pattern = "(\\d)\\1.*(\\d)\\2".toRegex()
-    if (pattern.matches(pin)) {
-        return false
-    }
+    result = if (result) pin.validatePinCodeDuplicate() else result
 
-    return true
+    return result
 }
 
 // เช็คความยาวของ input
@@ -36,48 +21,32 @@ fun String.validatePinCodeLength(): Boolean {
 
 // เช็คเลขซ้ำติดกันเกิน 2 ตัว
 fun String.validatePinCodeContiguous(): Boolean {
-    var result = true
     for (i in 0 until this.length - 2) {
         if (this[i] == this[i + 1] && this[i + 1] == this[i + 2]) {
-            result = false
             return false
         }
     }
-    return result
+    return true
 }
 
 // เช็คเลขเรียงกันเกิน 2 ตัว
 fun String.validatePinCodeLinedUp(): Boolean {
-    var result = true
-    for (i in 0 until this.length - 2) {
-        if (this[i + 2] - this[i + 1] == 1 && this[i + 1] - this[i] == 1) {
-            result = false
+    for (i in 0..this.length - 3) {
+        if (this[i].code - this[i + 1].code == 1 && this[i + 1].code - this[i + 2].code == 1) {
+            return false
+        } else if (this[i].code - this[i + 1].code == -1 && this[i + 1].code - this[i + 2].code == -1) {
             return false
         }
     }
-    return result
+    return true
 }
 
 // เช็คเลขชุดซ้ำเกิน 2 ชุด
 fun String.validatePinCodeDuplicate(): Boolean {
-//    var result = true
-//    var duplicateSets = 0
-//    for (i in 0 until this.length - 3) {
-//        if (this.substring(i, i + 2) == this.substring(i + 2, i + 4)) {
-//            duplicateSets++
-//            if (duplicateSets >= 2) {
-//                result = false
-//                return false
-//            }
-//        }
-//    }
-//    return result
-    // เช็คชุดเลขซ้ำเกิน 2 ชุด
     val pattern = "(\\d)\\1.*(\\d)\\2".toRegex()
     if (pattern.matches(this)) {
         return false
     }
-
     return true
 }
 

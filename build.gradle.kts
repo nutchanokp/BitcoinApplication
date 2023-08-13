@@ -1,12 +1,7 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-//allprojects {
-//    ext {
-//        set("minSdkVersion", 25)
-//        set("targetSdkVersion", 34)
-//    }
-//}
 buildscript {
     extra.apply {
+        set("versionCode", 1)
+        set("versionName", "1.0")
         set("minSdkVersion", 25)
         set("targetSdkVersion", 34)
         set("applicationId", "com.nut.cdev.bitcoinapplication")
@@ -14,14 +9,8 @@ buildscript {
 
     dependencies {
         classpath("com.android.tools.build:gradle:8.0.0")
-        classpath("io.realm:realm-gradle-plugin:10.15.1")
+        classpath("io.realm:realm-gradle-plugin:10.16.1")
     }
-//    repositories {
-//        google()
-//        mavenCentral()
-//        gradlePluginPortal()
-////        maven {url =("https://jitpack.io")}
-//    }
 }
 plugins {
     id("com.android.application") version "8.1.0" apply false

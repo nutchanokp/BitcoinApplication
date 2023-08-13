@@ -58,13 +58,10 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
     fun countDown() {
         object : CountDownTimer(DELAY, 1000) {
 
-            // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
                 countDownTimer.emit("Refresh In : " + millisUntilFinished / 1000)
             }
 
-            // Callback function, fired
-            // when the time is up
             override fun onFinish() {
                 countDownTimer.emit("done")
             }
@@ -89,82 +86,5 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
         }
     }
 
-//    private var realm: Realm = Realm.getDefaultInstance()
-//
-//    val userName = MutableLiveEvent<String>()
-//
-//    init {
-//        getName()
-//    }
-//
-//    fun getName() {
-//        val name = realm.where(NameModel::class.java).findAll().lastOrNull()?.name
-//        name?.let { userName.emit(it) }
-//    }
-//
-//    fun updateName(name: String) {
-//        val target = realm.where(NameModel::class.java).findAll().lastOrNull()
-//        realm.executeTransaction {
-//            target?.name = name
-//            realm.insertOrUpdate(target)
-//        }
-//        getName()
-//    }
-//
-//    val history: LiveData<List<HistoryModel>>
-//        get() = getHistory()
-//
-//    val getHealth: LiveData<HistoryModel>?
-//        get() = getLastHealthHistory()
-//
-//    private fun getHistory(): MutableLiveData<List<HistoryModel>> {
-//        val list = MutableLiveData<List<HistoryModel>>()
-//        val notes = realm.where(HistoryModel::class.java).findAll()
-//        list.value = notes?.subList(0, notes.size)
-//        return list
-//    }
-//
-//    private fun getLastHealthHistory(): MutableLiveData<HistoryModel>? {
-//        val list = MutableLiveData<HistoryModel>()
-//        val notes =
-//            realm.where(HistoryModel::class.java).equalTo("healthType", HealthTypeEnum.HEALTH.name)
-//                .findAll().lastOrNull()
-//        list.value = notes ?: null
-//        return list
-//    }
-//
-//    fun getHistoryPHQ9(): HistoryModel? {
-//        val result = realm.where(HistoryModel::class.java)
-//            .equalTo("healthType", HealthTypeEnum.MIND.name)
-//            .equalTo("mindType", CalculatePsychologyType.PHQ9.name)
-//            .findAll().lastOrNull()
-//        return result
-//    }
-//
-//    fun getHistoryTMSE(): HistoryModel? {
-//        val result = realm.where(HistoryModel::class.java)
-//            .equalTo("healthType", HealthTypeEnum.MIND.name)
-//            .equalTo("mindType", CalculatePsychologyType.TMSE.name)
-//            .findAll().lastOrNull()
-//        return result
-//    }
-//
-//    fun getHistoryDASS21(): HistoryModel? {
-//        val result = realm.where(HistoryModel::class.java)
-//            .equalTo("healthType", HealthTypeEnum.MIND.name)
-//            .equalTo("mindType", CalculatePsychologyType.DASS21.name)
-//            .findAll().lastOrNull()
-//        return result
-//    }
-//
-//    private var count = 0
-//
-//    fun getCurrentCount(): Int {
-//        return count
-//    }
-//
-//    fun getUpdatedCount(): Int {
-//        return ++count
-//    }
 }
 
