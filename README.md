@@ -25,7 +25,7 @@ USED
 currency BTC with refresh every 1 minute <br>
 and auto save in Realm Database<br>
 and can swipe to delete history<br>
-click to show dialog detail and can converter unit to BTC
+click to show dialog detail and can converter unit to BTC<br>
 - Example :
 <div style="display:flex;">
 <img alt="App image" src="/graphics/screenshot_main.png" width="20%">
@@ -38,6 +38,8 @@ click to show dialog detail and can converter unit to BTC
 <a href='/fibonacci/src/main/java/com/nut/cdev/fibonacci/ext/FibonacciExt.kt'>Code Link</a>
 <br>
 <a href='/fibonacci/src/test/java/com/nut/cdev/fibonacci/ext/FibonacciExtKtTest.kt'>Unit Test Link</a>
+- Example :
+<br>
 <div style="display:flex;">
 <img alt="App image" src="/graphics/screenshot_fibonacci.png" width="20%">
 <img alt="App image" src="/graphics/screenshot_fibonacci_input.png" width="20%">
@@ -49,6 +51,8 @@ click to show dialog detail and can converter unit to BTC
 <a href='/prime_number/src/main/java/com/nut/cdev/prime_number/ext/PrimeNumberExt.kt'>Code Link</a>
 <br>
 <a href='/prime_number/src/test/java/com/nut/cdev/prime_number/ext/PrimeNumberExtKtTest.kt'>Unit Test Link</a>
+- Example :
+<br>
 <div style="display:flex;">
 <img alt="App image" src="/graphics/screenshot_prime_number.png" width="20%">
 <img alt="App image" src="/graphics/screenshot_prime_number_result.png" width="20%">
@@ -66,6 +70,7 @@ click to show dialog detail and can converter unit to BTC
 <br>
 <a href='/validate/src/test/java/com/nut/cdev/validate/ext/ValidateExtKtTest.kt'>Unit Test Link</a>
 - Example :
+<br>
 <div style="display:flex;">
 <img alt="App image" src="/graphics/screenshot_pincode.png" width="20%">
 <img alt="App image" src="/graphics/screenshot_pincode_input.png" width="20%">
