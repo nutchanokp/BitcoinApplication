@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name=".ext.PrimeNumberActivity"
+            android:name=".PrimeNumberActivity"
             android:exported="false"
             android:label="@string/title_activity_prime_number"
             android:theme="@style/Theme.BitcoinApplication" />

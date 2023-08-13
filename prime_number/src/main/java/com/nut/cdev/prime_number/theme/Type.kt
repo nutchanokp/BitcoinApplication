@@ -1,4 +1,4 @@
-package com.nut.cdev.prime_number.ext.ui.theme
+package com.nut.cdev.prime_number.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
