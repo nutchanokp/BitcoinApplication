@@ -13,13 +13,12 @@ USED
 - Unit Test
 - Call API using : Retrofit
 
-
+<div style="display:flex;">
 <img alt="App image" src="/graphics/screenshot_pincode_input.png" width="20%">
-
 <img alt="App image" src="/graphics/screenshot_main_detail_and_converter_input.png" width="20%">
 <img alt="App image" src="/graphics/screenshot_main_dialog_confirmation.png" width="20%">
 <img alt="App image" src="/graphics/screenshot_main_dialog_other.png" width="20%">
-
+</div>
 <hr>
 
 currency BTC with refresh every 1 minute 
@@ -37,6 +36,7 @@ click to show dialog detail and can converter unit to BTC
 เขียน program generate ตัวเลข Fibonacci 
 
 <a href='/fibonacci/src/main/java/com/nut/cdev/fibonacci/ext/FibonacciExt.kt'>Code Link</a>
+    <br>
 <a href='/fibonacci/src/test/java/com/nut/cdev/fibonacci/ext/FibonacciExtKtTest.kt'>Unit Test Link</a>
 
 <div style="display:flex;">
@@ -48,6 +48,7 @@ click to show dialog detail and can converter unit to BTC
 เขียน program generate จำนวนเฉพาะ 
 
 <a href='/prime_number/src/main/java/com/nut/cdev/prime_number/ext/PrimeNumberExt.kt'>Code Link</a>
+    <br>
 <a href='/prime_number/src/test/java/com/nut/cdev/prime_number/ext/PrimeNumberExtKtTest.kt'>Unit Test Link</a>
 
 <div style="display:flex;">
@@ -56,19 +57,15 @@ click to show dialog detail and can converter unit to BTC
 </div>
 <hr>
 เขียนโค้ดในการ filter array
-
-<a href='/filter_array/src/main/java/com/nut/cdev/filter_array/ext/FilterArrayExt.kt'>Code Link</a>
+<a href='/filter_array/src/main/java/com/nut/cdev/filter_array/ext/FilterArrayExt.kt'>Code Link</a>    
+<br>
 <a href='/filter_array/src/test/java/com/nut/cdev/filter_array/ext/FilterArrayExtKtTest.kt'>Unit Test Link</a>
 
-- Example :
-<div style="display:flex;">
-<a href='/fibonacci/src/main/java\com/nut/cdev/fibonacci/ext/FibonacciExt.kt'>Code Link</a>
-<a href='/fibonacci/src/main/java\com/nut/cdev/fibonacci/ext/FibonacciExt.kt'>Unit Test Link</a>
-</div>
 <hr>
 เขียนฟังก์ชัน validate pincode
 
 <a href='/validate/src/main/java/com/nut/cdev/validate/ext/ValidateExt.kt'>Code Link</a>
+    <br>
 <a href='/validate/src/test/java/com/nut/cdev/validate/ext/ValidateExtKtTest.kt'>Unit Test Link</a>
 
 - Example :
