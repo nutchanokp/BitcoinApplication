@@ -16,12 +16,14 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
 
     companion object {
-        const val DELAY: Long = 6000
+        const val DELAY: Long = 60000
     }
 
     val btc = MutableLiveEvent<Response<BtcModel>>()
     val btcHistory = MutableLiveEvent<List<BtcHistoryModel>>()
     val countDownTimer = MutableLiveEvent<String>()
+
+    fun getCurrentBtc() = btc.value?.body()
 
     fun getBtc() {
         viewModelScope.launch {
@@ -58,7 +60,7 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                countDownTimer.emit("seconds remaining: " + millisUntilFinished / 1000)
+                countDownTimer.emit("Refresh In : " + millisUntilFinished / 1000)
             }
 
             // Callback function, fired

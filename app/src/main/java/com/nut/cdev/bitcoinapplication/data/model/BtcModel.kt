@@ -1,5 +1,7 @@
 package com.nut.cdev.bitcoinapplication.data.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import com.nut.cdev.bitcoinapplication.data.realm.BtcHistoryModel
 import java.util.UUID
@@ -13,7 +15,15 @@ data class BtcModel(
     var chartName: String? = null,
     @SerializedName("bpi")
     var bpi: BpiGroupModel? = null
-) {
+) :Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readParcelable(TimeModel::class.java.classLoader),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readParcelable(BpiGroupModel::class.java.classLoader)
+    ) {
+    }
+
     fun toBtcHistoryModel(): BtcHistoryModel {
         return BtcHistoryModel().apply {
             id = UUID.randomUUID().toString()
@@ -44,6 +54,27 @@ data class BtcModel(
             EUR_description = this@BtcModel.bpi?.USD?.description
             EUR_rate_float = this@BtcModel.bpi?.USD?.rate_float
 
+        }
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeParcelable(time, flags)
+        parcel.writeString(disclaimer)
+        parcel.writeString(chartName)
+        parcel.writeParcelable(bpi, flags)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<BtcModel> {
+        override fun createFromParcel(parcel: Parcel): BtcModel {
+            return BtcModel(parcel)
+        }
+
+        override fun newArray(size: Int): Array<BtcModel?> {
+            return arrayOfNulls(size)
         }
     }
 }

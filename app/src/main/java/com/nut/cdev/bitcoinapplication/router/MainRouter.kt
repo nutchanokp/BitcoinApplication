@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.nut.cdev.bitcoinapplication.views.main.MainActivity
 import com.nut.cdev.fibonacci.FibonacciActivity
-import com.nut.cdev.prime_number.ext.PrimeNumberActivity
+import com.nut.cdev.prime_number.PrimeNumberActivity
 import com.nut.cdev.validate.ext.ValidateActivity
 
 class MainRouter constructor(

@@ -7,4 +7,10 @@
 
     <color name="btn_red">#F10606</color>
 
+    <color name="color_true_blue">#ff0f69e0</color>
+    <color name="alice_blue">#eff3ff</color>
+    <color name="ultramarine_blue">#5d78ff</color>
+    <color name="united_nations_blue">#4b92ff</color>
+    <color name="color_dim_gray">#ff6e6e6e</color>
+    <color name="line_platinum">#E6E6E6</color>
 </resources>

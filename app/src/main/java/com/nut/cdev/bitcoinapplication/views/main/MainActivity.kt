@@ -1,14 +1,22 @@
 package com.nut.cdev.bitcoinapplication.views.main
 
+import android.annotation.SuppressLint
 import com.nut.cdev.bitcoinapplication.R
 import com.nut.cdev.bitcoinapplication.base.BaseActivity
+import com.nut.cdev.bitcoinapplication.data.model.BtcModel
+import com.nut.cdev.bitcoinapplication.data.realm.BtcHistoryModel
 import com.nut.cdev.bitcoinapplication.databinding.ActivityMainBinding
 import com.nut.cdev.bitcoinapplication.enums.TopicEnum
 import com.nut.cdev.bitcoinapplication.ext.enableSwipeRecyclerView
+import com.nut.cdev.bitcoinapplication.ext.toShowDate
+import com.nut.cdev.bitcoinapplication.ext.toShowTime
+import com.nut.cdev.bitcoinapplication.views.dialog.DialogAlertMessage
+import com.nut.cdev.bitcoinapplication.views.dialog.DialogBtcDetail
 import com.nut.cdev.bitcoinapplication.views.dialog.DialogOther
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@SuppressLint("SetTextI18n")
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getLayoutResId(): Int = R.layout.activity_main
 
@@ -18,42 +26,43 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initView() {
         binding.rvHistory.adapter = adapter
 
-        binding.rvHistory.enableSwipeRecyclerView(
-            this,
-            adapter
-        ) {
-            runBlocking {
-//                adapter.deleteItem(it)
-                it.updatedISO?.let { it1 -> viewModel.deleteHistory(it1) }
-            }
-        }
+
     }
 
     override fun initInstances() {
         binding.apply {
+            btnMenu.setOnClickListener { showDialogOther() }
+            adapter.selectMenu { showDialogDetail(it.toBtcModel()) }
+            btnNewBtc.setOnClickListener { showDialogDetail() }
+            rvHistory.enableSwipeRecyclerView(
+                this@MainActivity,
+                adapter
+            ) { btc -> showDialogAlertMessage(btc) }
+        }
+    }
 
-            btnMenu.setOnClickListener {
+    private fun showDialogAlertMessage(btc: BtcHistoryModel) {
 
-                val dialog = DialogOther()
-                dialog.show(supportFragmentManager, "")
-                dialog.setOnClick {
-                    when (it) {
-                        TopicEnum.fibonacci -> router.toFibonacci()
-                        TopicEnum.filter_array -> router.toFibonacci()
-                        TopicEnum.prime_number -> router.toPrimeNumber()
-                        TopicEnum.validate -> router.toValidatePinCode()
-                    }
-                }
+        val dialog = DialogAlertMessage.newInstance("คุณต้องการลบหรือไม่", "ใช่", "ไม่")
+        dialog.setOnButtonLeftClick {
+            runBlocking {
+                btc.updatedISO?.let { it1 -> viewModel.deleteHistory(it1) }
             }
         }
+        dialog.setOnButtonRightClick { }
+        dialog.show(supportFragmentManager)
+
     }
 
     override fun setupObserve() {
 
         viewModel.btc.observe(this) {
-            binding.tvUpdated.text = it.body()?.time?.updated.toString()
-            binding.tvUpdatedISO.text = it.body()?.time?.updatedISO.toString()
-            binding.tvUpdateduk.text = it.body()?.time?.updateduk.toString()
+            val dateTime = it.body()?.time?.updatedISO?.replace("T", " ")?.replace("+00:00", "")
+            binding.tvTime.text =
+                "Date : " + dateTime?.toShowDate() + "\nTime : " + dateTime?.toShowTime() + " s"
+            binding.tvUSD.text = "USD : " + it.body()?.bpi?.USD?.rate
+            binding.tvGDP.text = "GBP : " + it.body()?.bpi?.GBP?.rate
+            binding.tvEUR.text = "EUR : " + it.body()?.bpi?.EUR?.rate
 
         }
         viewModel.btcHistory.observe(this) {
@@ -65,5 +74,28 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
 
 
+    }
+
+    private fun showDialogDetail(btcModel: BtcModel? = null) {
+        val dialog = if (btcModel != null) {
+            DialogBtcDetail.newInstance(btcModel)
+        } else {
+            viewModel.getCurrentBtc()?.let { DialogBtcDetail.newInstance(it) }
+        }
+        dialog?.show(supportFragmentManager)
+    }
+
+    private fun showDialogOther() {
+
+        val dialog = DialogOther()
+        dialog.show(supportFragmentManager, "")
+        dialog.setOnClick {
+            when (it) {
+                TopicEnum.fibonacci -> router.toFibonacci()
+                TopicEnum.filter_array -> router.toFibonacci()
+                TopicEnum.prime_number -> router.toPrimeNumber()
+                TopicEnum.validate -> router.toValidatePinCode()
+            }
+        }
     }
 }
