@@ -1,3 +1,9 @@
+//ext {
+//    kotlin_version = "1.7.20"
+//    nav_version = "2.5.3"
+//    viewmodel_version = '2.2.0'
+//}
+
 pluginManagement {
     repositories {
         google()
@@ -15,4 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "BitcoinApplication"
 include(":app")
- 
+include(":fibonacci")
+include(":validate")
+include(":prime_number")
+include(":filter_array")
+include(":recyclerview")
+include(":number_picker")
