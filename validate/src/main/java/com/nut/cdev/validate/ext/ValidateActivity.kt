@@ -3,6 +3,7 @@ package com.nut.cdev.validate.ext
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -15,6 +16,7 @@ class ValidateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_validate)
+//        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         initView()
     }
 

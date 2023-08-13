@@ -32,6 +32,8 @@ import androidx.compose.ui.unit.dp
 import com.nut.cdev.number_picker.DialogNumberDecimal
 import com.nut.cdev.prime_number.theme.BitcoinApplicationTheme
 import com.nut.cdev.prime_number.theme.Blue50
+import com.nut.cdev.prime_number.theme.Lime100
+import com.nut.cdev.prime_number.theme.Lime50
 import com.nut.cdev.prime_number.theme.Purple80
 import com.nut.cdev.prime_number.theme.md_blue_400
 
@@ -41,7 +43,7 @@ fun CardViewInputPreview() {
     val (weight, weightSelected) = remember { mutableStateOf(0) }
     BitcoinApplicationTheme {
         Surface(
-            modifier = Modifier.fillMaxSize(), color = Blue50
+            modifier = Modifier.fillMaxSize(), color = Lime100
         ) {
             Column(
                 modifier = Modifier.verticalScroll(rememberScrollState())

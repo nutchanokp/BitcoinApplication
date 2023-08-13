@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.nut.cdev.number_picker.NumberPickerModel
 import com.nut.cdev.prime_number.theme.BitcoinApplicationTheme
+import com.nut.cdev.prime_number.theme.Lime50
 import com.nut.cdev.prime_number.theme.Purple80
 
 class PrimeNumberActivity : AppCompatActivity() {
@@ -59,14 +60,14 @@ fun PrimeNumberView(modifier: Modifier = Modifier) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = "Back",
-                    tint = Color.White
+                    tint = Color.Black
                 )
             }
 
             Text(
                 text = "Generate ตัวเลข จำนวนเฉพาะ",
                 textAlign = TextAlign.Center,
-                color = Color.White,
+                color = Color.Black,
                 style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.fillMaxWidth(),
                 fontWeight = FontWeight.Bold
@@ -89,7 +90,7 @@ fun PrimeNumberPreview() {
     BitcoinApplicationTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = Purple80
+            color = Lime50
         ) {
             PrimeNumberView()
         }

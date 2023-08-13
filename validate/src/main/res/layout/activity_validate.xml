@@ -7,149 +7,159 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
         android:orientation="vertical"
         tools:context=".ext.ValidateActivity">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btnNewBtc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="#B3E5FC"
-            app:cardCornerRadius="8dp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.8">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scrollbars="vertical">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_gravity="center"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnNewBtc"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_centerInParent="true"
+                    app:cardBackgroundColor="#B3E5FC"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true">
 
-                    <ImageView
-                        android:id="@+id/btnBack"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:src="@drawable/baseline_arrow_back_24" />
-
-                    <TextView
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="Validate Pincode"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/etPinCode"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#E1F5FE"
-                    android:gravity="center"
-                    android:hint="ระบุ Pin Code"
-                    android:inputType="number" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                            <ImageView
+                                android:id="@+id/btnBack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:src="@drawable/baseline_arrow_back_24" />
 
-                    <ImageView
-                        android:id="@+id/ivLength"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="10dp"
-                        tools:src="@drawable/baseline_check_circle_outline_24" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Validate Pincode"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="input จะต้องมีความยาวมากกว่าหรือเท่ากับ 6 ตัวอักษร"
-                        android:textColor="#000000" />
-                </LinearLayout>
+                        <EditText
+                            android:id="@+id/etPinCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#E1F5FE"
+                            android:gravity="center"
+                            android:hint="ระบุ Pin Code"
+                            android:inputType="number" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/ivContiguous"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="10dp"
-                        tools:src="@drawable/baseline_check_circle_outline_24" />
+                            <ImageView
+                                android:id="@+id/ivLength"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                tools:src="@drawable/baseline_check_circle_outline_24" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="input จะต้องกันไม่ให้มีเลขซ้ำติดกันเกิน 2 ตัว"
-                        android:textColor="#000000" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="input จะต้องมีความยาวมากกว่าหรือเท่ากับ 6 ตัวอักษร"
+                                android:textColor="#000000" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/ivLinedUp"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="10dp"
-                        tools:src="@drawable/baseline_check_circle_outline_24" />
+                            <ImageView
+                                android:id="@+id/ivContiguous"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                tools:src="@drawable/baseline_check_circle_outline_24" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="input จะต้องกันไม่ให้มีเลขเรียงกันเกิน 2 ตัว"
-                        android:textColor="#000000" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="input จะต้องกันไม่ให้มีเลขซ้ำติดกันเกิน 2 ตัว"
+                                android:textColor="#000000" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/ivDuplicate"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="10dp"
-                        tools:src="@drawable/baseline_check_circle_outline_24" />
+                            <ImageView
+                                android:id="@+id/ivLinedUp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                tools:src="@drawable/baseline_check_circle_outline_24" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="input จะต้องกันไม่ให้มีเลขชุดซ้ำ เกิน 2 ชุด"
-                        android:textColor="#000000" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="input จะต้องกันไม่ให้มีเลขเรียงกันเกิน 2 ตัว"
+                                android:textColor="#000000" />
+                        </LinearLayout>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.cardview.widget.CardView>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <ImageView
+                                android:id="@+id/ivDuplicate"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                tools:src="@drawable/baseline_check_circle_outline_24" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="input จะต้องกันไม่ให้มีเลขชุดซ้ำ เกิน 2 ชุด"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
 </layout>

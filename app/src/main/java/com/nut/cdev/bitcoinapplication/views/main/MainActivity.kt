@@ -96,6 +96,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 TopicEnum.prime_number -> router.toPrimeNumber()
                 TopicEnum.validate -> router.toValidatePinCode()
             }
+            dialog.dismiss()
         }
     }
 }

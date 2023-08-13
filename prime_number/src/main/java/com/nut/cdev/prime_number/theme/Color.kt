@@ -12,7 +12,25 @@ val Pink40 = Color(0xFF7D5260)
 
 val Blue50 = Color(0xFFE3F2FD)
 val md_blue_400 = Color(0xFF42A5F5)
+val Lime50 = Color(0xFFF9FBE7)
+val Lime100 = Color(0xFFF0F4C3)
+val Lime200 = Color(0xFFE6EE9C)
 
+//<!-- lime-->
+//<color name="md_lime_50">#F9FBE7</color>
+//<color name="md_lime_100">#F0F4C3</color>
+//<color name="md_lime_200">#E6EE9C</color>
+//<color name="md_lime_300">#DCE775</color>
+//<color name="md_lime_400">#D4E157</color>
+//<color name="md_lime_500">#CDDC39</color>
+//<color name="md_lime_600">#C0CA33</color>
+//<color name="md_lime_700">#A4B42B</color>
+//<color name="md_lime_800">#9E9D24</color>
+//<color name="md_lime_900">#827717</color>
+//<color name="md_lime_A100">#F4FF81</color>
+//<color name="md_lime_A200">#EEFF41</color>
+//<color name="md_lime_A400">#C6FF00</color>
+//<color name="md_lime_A700">#AEEA00</color>
 
 //<!--reds-->
 //<color name="md_red_50">#FFEBEE</color>
@@ -190,21 +208,6 @@ val md_blue_400 = Color(0xFF42A5F5)
 //<color name="md_light_green_A400">#76FF03</color>
 //<color name="md_light_green_A700">#64DD17</color>
 //
-//<!-- lime-->
-//<color name="md_lime_50">#F9FBE7</color>
-//<color name="md_lime_100">#F0F4C3</color>
-//<color name="md_lime_200">#E6EE9C</color>
-//<color name="md_lime_300">#DCE775</color>
-//<color name="md_lime_400">#D4E157</color>
-//<color name="md_lime_500">#CDDC39</color>
-//<color name="md_lime_600">#C0CA33</color>
-//<color name="md_lime_700">#A4B42B</color>
-//<color name="md_lime_800">#9E9D24</color>
-//<color name="md_lime_900">#827717</color>
-//<color name="md_lime_A100">#F4FF81</color>
-//<color name="md_lime_A200">#EEFF41</color>
-//<color name="md_lime_A400">#C6FF00</color>
-//<color name="md_lime_A700">#AEEA00</color>
 //
 //<!--yellow -->
 //<color name="md_yellow_50">#FFFDE7</color>

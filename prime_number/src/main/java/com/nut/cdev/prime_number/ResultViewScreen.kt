@@ -36,7 +36,7 @@ fun BmrResultViewPreview() {
 
     BitcoinApplicationTheme {
         Surface(
-            modifier = Modifier.fillMaxSize(), color = Purple80
+            modifier = Modifier.fillMaxSize(), color = Color.White
         ) {
             Column(
                 modifier = Modifier.verticalScroll(rememberScrollState())
