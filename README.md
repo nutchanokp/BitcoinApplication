@@ -13,11 +13,24 @@ USED
 
 
 <div style="display:flex;">
+  
 <img alt="App image" src="/graphics/screenshot_fibonacci.png" width="20%">
 <img alt="App image" src="/graphics/screenshot_fibonacci_input.png" width="20%">
-<img alt="App image" src="/graphics/screenshot_fibonacci_input.png" width="20%">
-<img alt="App image" src="/graphics/screenshot_fibonacci_input.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_fibonacci_result.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_main.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_main_detail_and_converter.png" width="20%">
+
+<img alt="App image" src="/graphics/screenshot_main_detail_and_converter_input.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_main_dialog_confirmation.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_main_dialog_other.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_main_swipe_to_delete.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_pincode.png" width="20%">
+
+<img alt="App image" src="/graphics/screenshot_pincode_input.png" width="20%">
+  <img alt="App image" src="/graphics/screenshot_prime_number.png" width="20%">
+<img alt="App image" src="/graphics/screenshot_prime_number_result.png" width="20%">
 </div>
+![screenshot_fibonacci](https://github.com/nutchanokp/BitcoinApplication/assets/67836531/d492957c-7c0d-45aa-86d8-7d5e5c70d4bb)
 
 
 โจทย์
